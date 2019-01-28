@@ -1,0 +1,82 @@
+<include src="../common/alert/alert" />
+<wxs module="filter" src="./index.wxs"></wxs>
+<view class='search-box'>
+    <input name="search" placeholder='有你好看，先领劵在购买' bindblur="search_input"></input>
+    <icon class='search-icon'></icon>
+    <view class='search-btn' bindtap='search'>查询</view>
+</view>
+<!-- banner图 start -->
+<!-- <view class='banner'>
+  <swiper indicator-dots="true" autoplay="true" interval="3000" circular="true" indicator-active-color="#ff504d" indicator-color="#fff" next-margin="20rpx">
+    <block wx:for="{{banner}}" wx:key="{{index}}">
+      <swiper-item>
+        <navigator url="{{item.imgHref}}">
+          <image src="{{item.imgUrl}}" class="slide-image" mode="widthFix"/>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+</view> -->
+<!-- banner图 end -->
+
+<!-- 分类start -->
+<!-- <view class='classification'>
+  <block wx:for="{{typeNav}}">
+    <view class='ul'>
+      <navigator>
+        <image class='type-icon' src='{{item.imgUrl}}'></image>
+        <view class='type-name'>{{item.name}}</view>
+      </navigator>
+    </view>
+  </block>
+</view> -->
+<view class='zhanwei' wx:if="{{fiexd}}"></view>
+<view class="nav-lists {{ fiexd ? 'active':''}}">
+  <view class='nav-wrapper' style='transform: translate3d({{navTransformLeft}}px, 0px, 0px); transition-duration:{{duration}}ms'>
+    <block wx:for="{{nav_list}}" wx:key="{{index}}">
+      <view class='list {{navOnclick == index ? "active":""}}'  data-num="{{index}}" data-id="{{item.navId}}" bindtap='navClick'>{{item.title}}</view>
+    </block>
+  </view>
+</view>
+<!-- 分类end -->
+
+<!-- 商品列表start -->
+<view class='recommend-list'>
+    <block wx:for="{{map_data}}" wx:key="{{index}}">
+      <view class='li'>
+        <navigator class='a' url="/pages/details/index?num_id={{item.item_id}}">
+          <image class='img-url' mode='widthFix' src='{{item.pict_url}}'></image>
+          <view class='commodity'>
+            <view class='commodity-title'><view class='pingduoduo' wx:if="{{!examine}}">拼多多</view>{{item.title}}</view>
+            <view class='conpons-box'>
+              <view class='conpon'>
+                <text>劵</text>￥{{item.coupon_amount}}
+              </view>
+              <view class='used-envelope'>收益 ￥{{filter.envelope(item.commission_rate, item.zk_final_price, item.coupon_amount)}}</view>
+            </view>
+            <view class='price'>
+              <view class='sale-price'>￥{{filter.numberToFix(item.zk_final_price - item.coupon_amount)}}</view>
+              <view class='market-price'>￥{{item.zk_final_price}}</view>
+              <view class='volume'>已售{{item.volume}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+
+
+  <!-- <view class='li'>
+    <navigator class='a'>
+      <image class='img-url' mode='widthFix' src='http://gw.alicdn.com/bao/uploaded/i1/432012926/TB2sdjTfC_I8KJjy0FoXXaFnVXa_!!432012926.jpg'></image>
+      <view class='commodity'>
+        <view class='commodity-title'>LLANO原创设计港味港风韩风chic风复古套头毛衣秋冬</view>
+        <view class='price'>
+          <view class='sale-price'>￥139.00</view>
+          <view class='market-price'>￥139.00</view>
+          <view class='volume'>已售55</view>
+        </view>
+      </view>
+    </navigator>
+  </view> -->
+</view>
+<!-- 商品列表end -->

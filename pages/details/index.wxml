@@ -1,0 +1,64 @@
+<wxs module="filter" src="./index.wxs"></wxs>
+<!--pages/details/index.wxml-->
+<swiper class='details-swiper' indicator-dots="true" indicator-active-color="#ff504d" indicator-color="#fff" autoplay="true" interval="3000">
+  <swiper-item >
+    <image src="{{map_data.pict_url}}" mode='widthFix'></image>
+  </swiper-item>
+  <block wx:if="{{map_data.small_images}}" wx:for="{{map_data.small_images.string}}" wx:key="{{index}}">
+    <swiper-item >
+      <image src="{{item}}" mode='widthFix'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='baby-title'>{{map_data.title}}</view>
+<view class='conpons-box'>
+  <view class='conpon' wx:if="{{filter.CouponNum(map_data.coupon_info)}}">
+    <text>劵</text>￥{{filter.CouponNum(map_data.coupon_info)}}
+  </view>
+  <view class='used-envelope'>收益 ￥{{filter.envelope1(map_data.commission_rate,map_data.zk_final_price,filter.CouponNum(map_data.coupon_info))}}</view>
+</view>
+<view class='post-coupon'>
+  <view class='juanhou'><text>劵后￥</text><text class='money'>{{filter.numberToFix(map_data.zk_final_price - filter.CouponNum(map_data.coupon_info))}}</text></view>
+  <view class='yj'>(原价￥{{map_data.zk_final_price}})</view>
+  <view class='volume'>已售{{map_data.volume}}件</view>
+</view>
+<view class='fg'></view>
+<!-- 口令start -->
+<view class='code'>
+  <view class='code-title' bindtap='copyCode'>一键点击复制口令</view>
+  <view class='password'>
+    <view class='password-text'>{{model}}</view>
+    <view class='password-reamrk' wx:if="{{examine == true}}">复制这条信息，打开【手机掏宝】即可领劵购买</view>
+  </view>
+</view>
+<!-- 口令end -->
+<!-- 更多推荐start -->
+<view class='fg'></view>
+<view>
+  <view class='more-title'>更多宝贝推荐</view>
+</view>
+<!-- 更多推荐end -->
+<view class='recommend-list'>
+  <block wx:for="{{commlist}}" wx:key="{{index}}">
+      <view class='li'>
+        <navigator class='a' url="/pages/details/index?num_id={{item.num_iid}}">
+          <image class='img-url' mode='widthFix' src='{{item.pict_url}}'></image>
+          <view class='commodity'>
+            <view class='commodity-title'><view class='pingduoduo' wx:if="{{!examine}}">拼多多</view>{{item.title}}</view>
+            <view class='price'>
+              <view class='sale-price'>￥{{item.zk_final_price}}</view>
+              <!-- <view class='market-price'>￥139.00</view> -->
+              <view class='volume'>已售{{item.volume}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+  </block>
+</view>
+<view style='height:100rpx;'></view>
+<view class='fiexd-bottom'>
+  <form bindsubmit="formSubmit" report-submit='true'>
+    <button class='purchase' formType="submit">口令购买</button>
+  </form>
+  <!-- <view class='purchase' bindtap='copyCode'>口令购买</view> -->
+</view>

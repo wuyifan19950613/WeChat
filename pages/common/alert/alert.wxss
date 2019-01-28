@@ -1,0 +1,58 @@
+/* pages/common/alert/alert.wxss */
+.layer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+.black{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.5);
+}
+.layer-box{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.layer-box .title{
+  font-size: 30rpx;
+  padding: 10rpx 20rpx;
+}
+.layer-box .top{
+  background: #fff;
+  padding-bottom: 40rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.see-btn{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 10rpx auto 0;
+  color: #fff;
+  background: #ff504d;
+  text-align: center;
+  border-radius: 40rpx;
+}
+.close{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 20rpx auto;
+}
+.money{
+  font-size: 36rpx;
+  color: #ff504d;
+  padding-left: 20rpx;
+  margin-bottom: 20rpx;
+}

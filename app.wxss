@@ -1,0 +1,33 @@
+/**app.wxss**/
+
+.flex{
+    display: flex;
+}
+.fe{
+    flex: 1;
+}
+image{
+  width: 100%;
+}
+button::after{
+  border: none;
+  background: none;
+}
+button{
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+.button-hover{
+  color: none;
+  background: none;
+}
+.pingduoduo{
+  display: inline-block;
+  background: #ff504d;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0 5rpx;
+  border-radius: 5rpx;
+  margin-right: 5rpx;
+}

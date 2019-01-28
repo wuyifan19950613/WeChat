@@ -1,0 +1,39 @@
+<wxs module="filter" src="../details/index.wxs"></wxs>
+<view class='recommend-list'>
+    <block wx:for="{{map_data}}" wx:key="{{index}}">
+      <view class='li'>
+        <navigator class='a' url="/pages/details/index?num_id={{item.num_iid}}">
+          <image class='img-url' mode='widthFix' src='{{item.pict_url}}'></image>
+          <view class='commodity'>
+            <view class='commodity-title'>{{item.title}}</view>
+            <view class='conpons-box'>
+              <view class='conpon' wx:if="{{filter.CouponNum(item.coupon_info) != 0}}">
+                <text>劵</text>￥{{filter.CouponNum(item.coupon_info)}}
+              </view>
+              <view class='used-envelope'>收益 ￥{{filter.envelope1(item.commission_rate, item.zk_final_price, filter.CouponNum(item.coupon_info))}}</view>
+            </view>
+            <view class='price'>
+              <view class='sale-price'>￥{{filter.numberToFix(item.zk_final_price - filter.CouponNum(item.coupon_info))}}</view>
+              <view class='market-price'>￥{{item.zk_final_price}}</view>
+              <view class='volume'>已售{{item.volume}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+
+
+  <!-- <view class='li'>
+    <navigator class='a'>
+      <image class='img-url' mode='widthFix' src='http://gw.alicdn.com/bao/uploaded/i1/432012926/TB2sdjTfC_I8KJjy0FoXXaFnVXa_!!432012926.jpg'></image>
+      <view class='commodity'>
+        <view class='commodity-title'>LLANO原创设计港味港风韩风chic风复古套头毛衣秋冬</view>
+        <view class='price'>
+          <view class='sale-price'>￥139.00</view>
+          <view class='market-price'>￥139.00</view>
+          <view class='volume'>已售55</view>
+        </view>
+      </view>
+    </navigator>
+  </view> -->
+</view>

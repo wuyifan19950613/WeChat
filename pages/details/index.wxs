@@ -1,0 +1,23 @@
+module.exports = {
+  numberToFix: function (value) {
+    return value.toFixed(2)
+  },
+  envelope: function (commission_rate, zk_final_price, coupon_amount) {
+    console.log(commission_rate, zk_final_price, coupon_amount)
+    var envelopeNum = Math.floor((Math.floor(commission_rate * (zk_final_price - coupon_amount)) / 100) * 0.7 * 100) / 100;
+    return envelopeNum;
+  },
+  envelope1: function (commission_rate, zk_final_price, coupon_amount){
+    var envelopeNum = Math.floor((Math.floor((commission_rate / 100).toFixed(2) * (zk_final_price - coupon_amount)) / 100) * 0.7 * 100) / 100;
+    return envelopeNum;
+  },
+  CouponNum: function (v) {
+    if (v == '') {
+      return 0;
+    } else {
+      var index = v.indexOf('减');
+      var result = parseInt(v.substring(index + 1, v.length));
+      return result;
+    }
+  },
+}

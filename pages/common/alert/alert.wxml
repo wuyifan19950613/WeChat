@@ -1,0 +1,14 @@
+<!--pages/common/alert/alert.wxml-->
+<view class='layer' wx:if="{{modle}}">
+  <view class='black'></view>
+  <view class='layer-box'>
+    <view class='top'>
+      <image src='{{alertXml.pict_url}}' mode='widthFix'></image>
+      <view class='title'>{{alertXml.title}}</view>
+      <view class='money'>￥{{alertXml.zk_final_price}}</view>
+      <navigator url='/pages/details/index?num_id={{alertXml.num_iid}}' class="see-btn">查看详情</navigator>
+    </view>
+    <image class='close' bindtap='close' src='http://www.xiaohuanzi.cn/images/close.png' mode='widthFix'></image>
+  </view>
+
+</view>

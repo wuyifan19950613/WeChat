@@ -1,0 +1,212 @@
+/* pages/YoCoupons/index.wxss */
+@import "../common/alert/alert.wxss";
+.search-box{
+    padding: 20rpx;
+    position: relative
+}
+input[name="search"]{
+    background: #f3f3f3;
+    height: 80rpx;
+    font-size: 24rpx;
+    padding-left: 60rpx;
+    border-radius: 10rpx;
+}
+.search-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30rpx;
+    background: url('http://www.xiaohuanzi.cn/images/search-icon.png');
+    width: 40rpx;
+    height: 40rpx;
+    background-size: 100%;
+}
+.zhanwei{
+  height: 80rpx;
+  padding:0 20rpx;
+  margin-top:20rpx;
+}
+.search-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20rpx;
+    background: #ff504d;
+    color: #fff;
+    padding: 0 40rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 26rpx;
+    border-bottom-right-radius: 10rpx; 
+    border-top-right-radius: 10rpx; 
+    z-index: 888;
+}
+.banner{
+  padding: 0 20rpx;
+  border-radius: 20rpx;
+}
+.banner swiper{
+  height: 133px;
+}
+.banner swiper-item{
+  overflow: hidden;
+  border-radius: 20rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+.slide-image{
+  width: 100%;
+  border-radius: 20rpx;
+}
+.classification{
+  display: flex;
+  padding: 20rpx;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+.classification .ul{
+  width: 20%;
+  min-width: 20%;
+  max-width: 20%;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.classification .ul .type-icon{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.classification .ul .type-name{
+  font-size: 28rpx;
+}
+.recommend-list{
+    background: #f7f7f7;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10rpx;
+}
+.recommend-list .li{
+  flex: 1;
+  min-height: 1.6rem;
+  padding: 10rpx;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+  width: 50%;
+  min-width: 50%;
+  box-sizing: border-box;
+}
+.recommend-list .li .a{
+    display: block;
+    background: #fff;
+    padding-bottom: 20rpx;
+}
+.commodity-title{
+  font-size: 28rpx;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.price{
+  position: relative;
+}
+.commodity{
+  padding: 0 10rpx;
+}
+.sale-price{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #ff504d;
+}
+.market-price{
+  display: inline-block;
+  font-size: 24rpx;
+  color: #b0b0b0;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+.volume{
+    color: #b0b0b0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 24rpx;
+    transform: translateY(-50%);
+}
+.nav-lists{
+  display: flex;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+}
+.nav-lists.active{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 991;
+  margin-top: 0;
+}
+.nav-wrapper{
+  display: flex;
+  /* transition-duration: 500ms; */
+}
+.nav-lists .list{
+  -webkit-overflow-scrolling: touch;
+  font-size: 28rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+  width: auto;
+  box-sizing: content-box;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+.nav-lists .list.active{
+  border-bottom: 4rpx solid #ff504d;
+  color: #ff504d;
+}
+.nav-lists swiper{
+  width: 100%;
+}
+.conpons-box{
+  display: flex;
+  margin-top: 20rpx;
+  align-items: center;
+}
+.conpons-box .conpon{
+  background: #ff504d;
+  color: #fff;
+  padding: 10rpx;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  border-radius: 8rpx;
+}
+.conpons-box .conpon text{
+  display: inline-block;
+  border-right: 1px dashed #fff;
+  padding-right: 10rpx;
+  margin-right: 10rpx;
+}
+.used-envelope{
+  background: rgba(255,80,77,.5);
+  display: inline-block;
+  padding: 10rpx;
+  font-size: 24rpx;
+  border-radius: 8rpx;
+  color: #fff;
+  margin-left: 10rpx;
+  line-height: 1.3;
+}

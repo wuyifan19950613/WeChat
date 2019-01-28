@@ -1,0 +1,9 @@
+module.exports = {
+  numberToFix: function (value){
+    return value.toFixed(2)
+  },
+  envelope: function (commission_rate, zk_final_price, coupon_amount){
+    var envelopeNum = Math.floor((Math.floor(commission_rate * (zk_final_price - coupon_amount)) / 100) * 0.7 * 100) / 100;
+    return envelopeNum;
+  }
+}
