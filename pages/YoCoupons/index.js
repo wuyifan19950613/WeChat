@@ -78,7 +78,9 @@ Page({
             material_id: res.data.data[0].navId,
             examine: wx.getStorageSync('examine')
           });
-          that.getBabyList(1, res.data.data[0].navId);
+          setTimeout(function(){
+            that.getBabyList(1, res.data.data[0].navId);
+          },1000)
         }
       });
       

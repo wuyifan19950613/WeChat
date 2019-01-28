@@ -100,14 +100,16 @@ App({
               const value = wx.getStorageSync('id');
               if (value == '' || value != id) {
                 wx.setStorageSync('id', id);
-                that.request({
-                  url: '/api/taobao/materialOptional?pageSize=30&pageNum=1&searchName=https://item.taobao.com/item.htm?id=' + id + '&pid=' + (wx.getStorageSync('user').pid),
-                  success: function (msg) {
-                    if (msg.data.msg.result_list) {
-                      cb(msg.data.msg.result_list.map_data[0]);
+                setTimeout(function(){
+                  that.request({
+                    url: '/api/taobao/materialOptional?pageSize=30&pageNum=1&searchName=https://item.taobao.com/item.htm?id=' + id + '&pid=' + (wx.getStorageSync('user').pid),
+                    success: function (msg) {
+                      if (msg.data.msg.result_list) {
+                        cb(msg.data.msg.result_list.map_data[0]);
+                      }
                     }
-                  }
-                })
+                  })
+                },1000)
               }
             }
           }

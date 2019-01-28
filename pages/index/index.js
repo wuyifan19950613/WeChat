@@ -84,7 +84,6 @@ Page({
         },
       },
     }
-    console.log(postData)
     app.request({
       url: '/api/applet/sendTemplateMessage',
       data: JSON.stringify(postData),
